@@ -9,7 +9,6 @@ The Philippines is the world's BPO capital — $32.5 billion in revenue, 1.7 mil
 ```mermaid
 flowchart LR
     KIN[Kinesis] --> SPS[Snowpipe Streaming]
-    SP --> RAW[RAW Tables]
     SPS --> RAW
     RAW --> DT[Dynamic Tables]
     DT --> ML[ML Functions]
