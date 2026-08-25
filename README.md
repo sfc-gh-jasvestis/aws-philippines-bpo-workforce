@@ -118,7 +118,7 @@ Run all scripts including AWS integration. Deploy QuickSight dashboard from `qui
 ## Business Impact
 
 Industry research and Snowflake customer outcomes:
-- **Philippines BPO industry revenue reached $32.5B in 2023, employing 1.7M workers** — [IBPAP](https://ibpap.org/industry-facts-and-figures)
+- **Philippines BPO industry revenue reached $32.5B in 2023, employing 1.7M workers** — [IBPAP](https://ibpap.org/)
 - **Average BPO attrition in Philippines is 30-40% annually — highest in APAC services** — [Everest Group](https://www.everestgrp.com/research/market-insights)
 - **Cost of replacing a BPO agent is 50-200% of annual salary including training** — [SHRM](https://www.shrm.org/topics-tools/news/talent-acquisition/real-costs-recruitment)
 - **AI-driven workforce analytics reduces attrition by 20-35% in contact centers** — [McKinsey Operations](https://www.mckinsey.com/capabilities/operations/our-insights)
