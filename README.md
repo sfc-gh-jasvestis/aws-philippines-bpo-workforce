@@ -122,7 +122,7 @@ Industry research and Snowflake customer outcomes:
 - **Average BPO attrition in Philippines is 30-40% annually — highest in APAC services** — [Everest Group](https://www.everestgrp.com/research/market-insights)
 - **Cost of replacing a BPO agent is 50-200% of annual salary including training** — [SHRM](https://www.shrm.org/topics-tools/news/talent-acquisition/real-costs-recruitment)
 - **AI-driven workforce analytics reduces attrition by 20-35% in contact centers** — [McKinsey Operations](https://www.mckinsey.com/capabilities/operations/our-insights)
-
+- **ServiceNow** (Snowflake customer): reduced mean time to resolution by 30% using AI-powered workforce analytics on Snowflake -- [snowflake.com/customers/servicenow](https://www.snowflake.com/en/customers/all-customers/case-study/servicenow/)
 
 ## Key Demo Numbers
 
