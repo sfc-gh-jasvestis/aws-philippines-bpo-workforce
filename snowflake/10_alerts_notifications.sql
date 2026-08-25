@@ -8,7 +8,7 @@ USE SCHEMA APP;
 CREATE OR REPLACE NOTIFICATION INTEGRATION aws_philippines_bpo_workforce_EMAIL_INT
   TYPE = EMAIL
   ENABLED = TRUE
-  ALLOWED_RECIPIENTS = ('jonathan.asvestis@snowflake.com');
+  ALLOWED_RECIPIENTS = ('<YOUR_EMAIL>');
 
 -- Alert: ATTRITION_SPIKE_ALERT
 CREATE OR REPLACE ALERT APP.ATTRITION_SPIKE_ALERT
@@ -22,7 +22,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_philippines_bpo_workforce_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] BPO Workforce Analytics & Attrition Prediction: Attrition rate exceeds critical threshold at site',
     'Attrition rate exceeds critical threshold at site'
   );
@@ -41,7 +41,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_philippines_bpo_workforce_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] BPO Workforce Analytics & Attrition Prediction: High-performer flagged as flight risk',
     'High-performer flagged as flight risk'
   );
