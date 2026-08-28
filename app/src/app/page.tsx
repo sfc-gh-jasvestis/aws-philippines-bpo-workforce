@@ -35,36 +35,36 @@ export default function HomePage() {
   const executiveCockpit = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KPICard title="Total CSAT" value="₱2.4B" status="neutral" />
-        <KPICard title="SLA Breaches" value="7" status="warning" />
-        <KPICard title="Anomalies Detected" value="3" status="danger" />
-        <KPICard title="Active Sites" value="124" status="neutral" />
+        <KPICard title="Total Headcount" value="24,800" status="neutral" />
+        <KPICard title="Attrition Rate" value="4.8%/mo" status="warning" />
+        <KPICard title="Training Completion" value="92%" status="neutral" />
+        <KPICard title="Open Positions" value="847" status="neutral" />
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Chart
           data={data?.timeseries || [{ period: 'Loading', value: 0 }]}
           type="line"
           xKey="period"
-          yKeys={[{ key: 'value', name: 'CSAT' }]}
-          title="CSAT Trend (Weekly)"
+          yKeys={[{ key: 'value', name: 'FTE' }]}
+          title="Headcount vs Plan (Monthly)"
         />
         <Chart
           data={data?.categories || [{ category: 'Loading', count: 0 }]}
           type="bar"
           xKey="category"
-          yKeys={[{ key: 'count', name: 'Count' }]}
-          title="SLA Breaches by Site"
+          yKeys={[{ key: 'count', name: 'Rate %' }]}
+          title="Attrition by Tenure"
         />
       </div>
       <DataTable
         columns={[
           { key: 'id', header: '#' },
           { key: 'name', header: 'Site' },
-          { key: 'status', header: 'Status' },
-          { key: 'value', header: 'CSAT' },
+          { key: 'status', header: 'Health' },
+          { key: 'value', header: 'Headcount' },
         ]}
         data={data?.entities || []}
-        title="Site Performance"
+        title="Site Workforce Health"
       />
     </div>
   );
@@ -72,16 +72,16 @@ export default function HomePage() {
   const domainTab1 = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <KPICard title="Efficiency" value="87%" />
-        <KPICard title="Utilization" value="72%" />
-        <KPICard title="Growth Rate" value="+8.4%" />
+        <KPICard title="Avg Tenure" value="2.4 yrs" />
+        <KPICard title="Promotion Rate" value="12%" />
+        <KPICard title="Engagement Score" value="4.1/5" />
       </div>
       <Chart
         data={data?.detail || [{ x: 'Loading', y: 0 }]}
         type="area"
         xKey="x"
-        yKeys={[{ key: 'y', name: 'Index' }]}
-        title="Workforce Performance Trend"
+        yKeys={[{ key: 'y', name: 'Risk %' }]}
+        title="Attrition Prediction by Team"
         height={400}
       />
     </div>
@@ -94,17 +94,17 @@ export default function HomePage() {
           data={data?.breakdown || [{ label: 'A', value: 30 }, { label: 'B', value: 70 }]}
           type="pie"
           xKey="label"
-          yKeys={[{ key: 'value', name: 'Score' }]}
-          title="Risk Distribution"
+          yKeys={[{ key: 'value', name: 'FTE' }]}
+          title="Hiring Pipeline vs Demand"
         />
         <ActionMemo
-          persona={{ name: 'Philippines Operations Lead', role: 'Director of Workforce' }}
+          persona={{ name: 'Angela Reyes-Dimaculangan', role: 'VP People & Culture' }}
           context={{}}
           onGenerate={async () => ({
             subject: 'Action Required',
             body: 'AI-generated recommendation based on current data patterns and predicted trends.',
             urgency: 'HIGH',
-            actions: ['Review top sla breaches findings', 'Optimize site allocation', 'Prepare quarterly workforce report'],
+            actions: ['Launch retention bonus for top performers in at-risk teams', 'Accelerate hiring pipeline for healthcare account ramp', 'Deploy upskilling program for AI-adjacent roles'],
           })}
         />
       </div>
@@ -116,9 +116,9 @@ export default function HomePage() {
       <AskAI
         title="Ask AI"
         sampleQuestions={[
-          'Which sites have the highest sla breaches?',
-          'Show csat trend for the last 30 days',
-          'What is the forecast for next quarter's csat?',
+          'Which teams have the highest attrition risk?',
+          'Show hiring pipeline conversion rate by source',
+          'What is the projected headcount gap for Q4 ramps?',
         ]}
         mode="both"
         onSubmit={async (question, mode) => {
@@ -178,8 +178,8 @@ export default function HomePage() {
 
   const tabs = [
     { id: 'executive-cockpit', label: 'Executive Cockpit', icon: '📊', content: executiveCockpit },
-    { id: 'domain-1', label: 'Workforce Analytics', icon: '📈', content: domainTab1 },
-    { id: 'domain-2', label: 'Alerts & Actions', icon: '⚡', content: domainTab2 },
+    { id: 'domain-1', label: 'Talent Analytics', icon: '📈', content: domainTab1 },
+    { id: 'domain-2', label: 'Planning', icon: '⚡', content: domainTab2 },
     { id: 'ask-ai', label: 'Ask AI', icon: '🤖', content: askAiTab },
     { id: 'architecture', label: 'Architecture & Data', icon: '🏗️', content: architectureTab },
   ];
