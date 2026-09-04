@@ -54,6 +54,7 @@ export default function HomePage() {
         <div className="lg:col-span-1">
           <GeoMap
             country="philippines"
+            labels={{ entity: 'Sites', event: 'Attendance Logs', alert: 'Absences' }}
             regions={data?.regions}
             markers={[{"label": "Makati", "value": "HQ: 8,400 agents", "color": "blue", "size": "lg"}, {"label": "Cebu", "value": "Site: 4,200 agents", "color": "green", "size": "lg"}, {"label": "Clark", "value": "Site: 2,100 agents", "color": "green", "size": "md"}, {"label": "Davao", "value": "Site: 1,200 agents", "color": "green", "size": "md"}, {"label": "Iloilo", "value": "Site: 800 agents", "color": "amber", "size": "sm"}]}
             routes={[]}
@@ -84,8 +85,13 @@ export default function HomePage() {
         columns={[
           { key: 'id', header: '#' },
           { key: 'name', header: 'Site' },
+          { key: 'region', header: 'Region' },
           { key: 'status', header: 'Health' },
-          { key: 'value', header: 'Headcount' },
+          { key: 'm1', header: 'Headcount' },
+          { key: 'm2', header: 'Training Completion' },
+          { key: 'm3', header: 'Tenure' },
+          { key: 'events', header: 'Attendance Logs' },
+          { key: 'alerts', header: 'Absences' },
         ]}
         data={data?.entities || []}
         title="Site Workforce Health"
